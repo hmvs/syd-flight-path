@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Specific Page Modifier",
+  "version": "1.0",
+  "description": "Alters a specific page’s content",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.domain.com.au"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
