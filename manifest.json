@@ -1,15 +1,32 @@
 {
   "manifest_version": 3,
-  "name": "Specific Page Modifier",
-  "version": "1.0",
-  "description": "Alters a specific page’s content",
+  "name": "Sydney Fligh Paths",
+  "version": "1.2",
+  "description": "Adds flight-path overlay to your map pages on domain.com.au (realestate.com.au coming soon), letting you toggle routes by the wind direction.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+   "action": {
+    "default_icon": {
+      "16":  "icons/icon16.png",
+      "48":  "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Sydney Flight Paths"
+  },
   "content_scripts": [
     {
-      "matches": [
-        "https://www.domain.com.au"
-      ],
+      "matches": ["https://*.domain.com.au/*"],
       "js": ["content.js"],
-      "run_at": "document_idle"
+      "run_at": "document_end"
     }
-  ]
+  ],
+   "web_accessible_resources": [
+   {
+     "resources": ["injected.js"],
+     "matches": ["https://*.domain.com.au/*"]
+   }
+ ]
 }
