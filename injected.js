@@ -4,10 +4,7 @@ function featureStyleFilter(f) {
     if (f.getProperty("flow") === window.selectedFlow || window.selectedFlow === "All") {
         const color = f.getProperty("color").substring(2, 8);
         return {
-            visible: true,
-            strokeColor: "#" + color,
-            strokeOpacity: 1,
-            strokeWeight: 1,
+            visible: true, strokeColor: "#" + color, strokeOpacity: 1, strokeWeight: 1,
         };
     }
     return {visible: false};
@@ -25,13 +22,7 @@ function setupMap() {
     // Rest of your existing setup code...
     const controlDiv = document.createElement('div');
     Object.assign(controlDiv.style, {
-        position: 'absolute',
-        top: '10px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        background: '#fff',
-        padding: '4px',
-        zIndex: '1'
+        position: 'absolute', top: '10px', right: '100px', background: '#fff', padding: '4px', zIndex: '1'
     });
 
     const select = document.createElement('select');
@@ -79,12 +70,18 @@ function findMap(obj, seen = new WeakSet()) {
     return null;
 }
 
+let attempts = 0;
 const interval = setInterval(() => {
+    if (attempts++ > 60) {
+        console.log("We give up");
+        clearInterval(interval);
+    }
     console.log("Looking for map interval!");
+
     try {
         if (window.google?.maps?.Map && window.google.maps.Map instanceof Object) {
             console.log("Google maps defined");
-            window.foundMap = findMap(window.document);
+            window.foundMap = findMap(window);
             if (window.foundMap) {
                 console.log("FOUND MAP!!!!!");
                 clearInterval(interval);
