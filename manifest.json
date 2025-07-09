@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Sydney Fligh Paths",
+  "name": "Sydney Flight Paths",
   "version": "1.3",
   "description": "Adds flight-path overlay to your map pages on domain.com.au and realestate.com.au",
   "icons": {
