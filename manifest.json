@@ -25,7 +25,7 @@
   ],
    "web_accessible_resources": [
    {
-     "resources": ["injected.js"],
+     "resources": ["injected.js", "SYDv5.geojson"],
      "matches": ["https://*.domain.com.au/*"]
    }
  ]
