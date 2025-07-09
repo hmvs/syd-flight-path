@@ -10,13 +10,13 @@ function featureStyleFilter(f) {
             strokeWeight: 1,
         };
     }
-    return { visible: false };
+    return {visible: false};
 }
 
 function setupMap() {
     const scriptTag = document.getElementById("flights-syd");
     const geoData = JSON.parse(scriptTag.getAttribute("data-geo-data"));
-    
+
     // Load GeoJSON data as an object instead of URL
     window.foundMap.data.addGeoJson(geoData);
     window.selectedFlow = "None";

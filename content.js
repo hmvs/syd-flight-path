@@ -1,12 +1,12 @@
 (async function injectPageScript() {
     // Fetch the GeoJSON data
     const geoJsonUrl = chrome.runtime.getURL("SYDv5.geojson");
-    console.log("URL:",geoJsonUrl);
+    console.log("URL:", geoJsonUrl);
     let geoJsonData;
     try {
         const response = await fetch(geoJsonUrl);
         geoJsonData = await response.json();
-    }catch (e){
+    } catch (e) {
         console.error("Error while loading geojson", e);
         return
     }
