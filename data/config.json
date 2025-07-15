@@ -1,0 +1,86 @@
+{
+  "airports": [
+    {
+      "name": "Sydney Airport",
+      "geojson": "SYD all flows v5.geojson",
+      "flows": [
+        "East",
+        "North",
+        "South",
+        "West"
+      ]
+    },
+    {
+      "name": "Melbourne International Airport",
+      "geojson": "tracks5.geojson",
+      "flows": [
+        "northwest",
+        "southeast",
+        "southwest",
+        "south",
+        "north"
+      ]
+    },
+    {
+      "name": "Brisbane Airport",
+      "geojson": "BNE 2R tracks v2.geojson",
+      "flows": [
+        "north",
+        "south"
+      ]
+    },
+    {
+      "name": "Gold Coast Airport",
+      "geojson": "tracks.geojson",
+      "flows": [
+        "south",
+        "north"
+      ]
+    },
+    {
+      "name": "Hobart Airport ",
+      "geojson": "Hobart Tracks final v2.geojson",
+      "flows": [
+        "south",
+        "cambridge",
+        "north"
+      ]
+    },
+    {
+      "name": "Cambridge Aerodrome",
+      "geojson": "Cambridge Tracks final.geojson",
+      "flows": [
+        "cambridge"
+      ]
+    },
+    {
+      "name": "Adelaide International Airport",
+      "geojson": "adlcimwidgetnew.geojson",
+      "flows": [
+        "northwest",
+        "southwest",
+        "northeast",
+        "southeast"
+      ]
+    },
+    {
+      "name": "Perth International Airport",
+      "geojson": "tracks.geojson",
+      "flows": [
+        "north",
+        "south",
+        "southwestd",
+        "northwesta"
+      ]
+    },
+    {
+      "name": "Canberra Airport",
+      "geojson": "tracks.geojson",
+      "flows": [
+        "south",
+        "north",
+        "training"
+      ]
+    }
+  ]
+}

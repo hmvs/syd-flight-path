@@ -13,6 +13,9 @@ function featureStyleFilter(f) {
 function setupMap() {
     const scriptTag = document.getElementById("flights-syd");
     const geoData = JSON.parse(scriptTag.getAttribute("data-geo-data"));
+    const airportName = scriptTag.getAttribute("data-airport-name");
+    const flows = JSON.parse(scriptTag.getAttribute("data-flows"));
+    scriptTag.remove();
 
     window.foundMap.data.addGeoJson(geoData);
     window.selectedFlow = "None";
@@ -23,8 +26,18 @@ function setupMap() {
     Object.assign(controlDiv.style, {
         position: 'absolute', top: '10px', right: '100px', background: '#fff', padding: '4px', zIndex: '1'
     });
+    
+    // Add airport name label
+    const airportLabel = document.createElement('span');
+    airportLabel.textContent = airportName + ': ';
+    Object.assign(airportLabel.style, {
+        marginRight: '5px', fontWeight: 'bold'
+    });
+    controlDiv.appendChild(airportLabel);
+    
     const select = document.createElement('select');
-    ['None', 'East', 'North', 'South', 'West', 'All'].forEach(dir => {
+    const dropdownOptions = ['None', ...flows, 'All'];
+    dropdownOptions.forEach(dir => {
         const opt = document.createElement('option');
         opt.value = dir;
         opt.textContent = dir;
